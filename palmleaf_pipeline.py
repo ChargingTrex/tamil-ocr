@@ -14,6 +14,16 @@ Usage:
 
 Run directly for a demo on a synthetic test image:
     python3 palmleaf_pipeline.py
+
+CHANGELOG (this revision):
+  * Rewrote punch-hole removal. The previous version searched for dark ink
+    BLOBS, but a punch hole photographed over a white sheet is BRIGHT -- in
+    the binary it's background, not a blob, so the old code only ever caught
+    the dark text/Sauvola ring that happened to encircle a hole (which
+    worked for one hole and missed the other on the test image). The new
+    detect_and_clear_holes() finds holes correctly as "a compact, round
+    region enclosed by the leaf" using the leaf silhouette, on the grayscale
+    image, and clears a disc wide enough to also remove the Sauvola edge-ring.
 """
 
 import cv2
@@ -35,21 +45,12 @@ def to_grayscale_luminosity(bgr_img: np.ndarray) -> np.ndarray:
 
 
 def denoise(bgr_img: np.ndarray) -> np.ndarray:
-    """Three-stage denoising: Gaussian blur -> Fast-NLM -> median filter.
+    """Light denoising to preserve stroke sharpness (avoids 'low-res' look).
     Returns a denoised grayscale image."""
-    # 1. Light Gaussian blur to smooth fibrous leaf texture
-    blurred = cv2.GaussianBlur(bgr_img, (5, 5), 0)
-
-    # 2. Fast Non-Local Means denoising (color version, then grayscale)
-    nlm = cv2.fastNlMeansDenoisingColored(blurred, None, h=10, hColor=10,
-                                           templateWindowSize=7, searchWindowSize=21)
-
-    # 3. Convert to grayscale (luminosity method)
-    gray = to_grayscale_luminosity(nlm)
-
-    # 4. Median filter to remove salt-and-pepper noise
+    gray = to_grayscale_luminosity(bgr_img)
+    # A single median blur is enough to remove salt-and-pepper leaf noise 
+    # while perfectly preserving the sharp, high-resolution edges of the text.
     denoised = cv2.medianBlur(gray, 3)
-
     return denoised
 
 
@@ -60,8 +61,7 @@ def compute_psnr(original: np.ndarray, processed: np.ndarray) -> float:
     mse = np.mean((original - processed) ** 2)
     if mse == 0:
         return float("inf")
-    max_intensity = 255.0
-    return 20 * np.log10(max_intensity / np.sqrt(mse))
+    return 20 * np.log10(255.0 / np.sqrt(mse))
 
 
 # ---------------------------------------------------------------------------
@@ -70,10 +70,9 @@ def compute_psnr(original: np.ndarray, processed: np.ndarray) -> float:
 
 def binarize_sauvola(gray_img: np.ndarray, window_size: int = 25, k: float = 0.2) -> np.ndarray:
     """Sauvola adaptive thresholding. Returns a binary image where
-    text/foreground = 0 (black) and background = 255 (white),
-    matching typical document-image convention."""
+    text/foreground = 0 (black) and background = 255 (white)."""
     thresh = threshold_sauvola(gray_img, window_size=window_size, k=k)
-    binary = (gray_img > thresh).astype(np.uint8) * 255  # True(bg)->255
+    binary = (gray_img > thresh).astype(np.uint8) * 255
     return binary
 
 
@@ -86,13 +85,9 @@ def binarize_otsu(gray_img: np.ndarray) -> np.ndarray:
 def clear_border_artifacts(binary_img: np.ndarray, margin: int = 4) -> np.ndarray:
     """Force a thin margin at the image edges to background (white).
 
-    Sauvola's local window gets clipped right at a hard crop boundary,
-    which commonly produces a blotchy dark frame artifact that has
-    nothing to do with real content. Left alone, this frame can visually
-    (and topologically, for contour-finding) merge with real text near
-    the edges into one giant connected blob -- breaking downstream
-    contour-based steps like punch-hole removal or line segmentation.
-    Clearing a small margin after binarization is a standard, cheap fix.
+    Sauvola's local window gets clipped at a hard crop boundary, producing a
+    blotchy dark frame that can merge with real edge text into one blob and
+    break downstream contour steps. Clearing a small margin is a cheap fix.
     """
     cleaned = binary_img.copy()
     cleaned[:margin, :] = 255
@@ -109,16 +104,11 @@ def clear_border_artifacts(binary_img: np.ndarray, margin: int = 4) -> np.ndarra
 def find_leaf_bbox(gray_img: np.ndarray, padding: int = 5) -> tuple:
     """Find the leaf's bounding box using the GRAYSCALE (pre-Sauvola) image.
 
-    IMPORTANT: this must run on grayscale/denoised pixels, not on the
-    Sauvola-binarized output. Sauvola is a *local* adaptive threshold, so
-    it erases the global brightness contrast between the leaf and the
-    white sheet it was photographed on -- there is no 'leaf border' left
-    to find contours from once you've already binarized per-character.
-    A simple global Otsu threshold on the grayscale image, by contrast,
-    still sees the leaf as one darker blob against a lighter sheet.
+    Must run on grayscale/denoised pixels, not the Sauvola output: Sauvola is
+    a local threshold that erases the global leaf-vs-sheet contrast, whereas a
+    global Otsu still sees the leaf as one darker blob against a lighter sheet.
     """
     _, mask = cv2.threshold(gray_img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-    # Clean up small speckle noise so we get one solid leaf blob
     kernel = np.ones((15, 15), np.uint8)
     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
 
@@ -128,7 +118,6 @@ def find_leaf_bbox(gray_img: np.ndarray, padding: int = 5) -> tuple:
 
     largest = max(contours, key=cv2.contourArea)
     x, y, w, h = cv2.boundingRect(largest)
-
     x0 = max(0, x - padding)
     y0 = max(0, y - padding)
     x1 = min(gray_img.shape[1], x + w + padding)
@@ -143,81 +132,77 @@ def crop_to_content(img: np.ndarray, bbox: tuple) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# Phase 3b: Punch-hole removal
+# Phase 3b: Punch-hole removal  (rewritten)
 # ---------------------------------------------------------------------------
 
-def remove_punch_holes(binary_img: np.ndarray, num_holes: int = 2,
-                        aspect_tolerance: float = 0.3, min_area: int = 300,
-                        max_area_fraction: float = 0.4) -> np.ndarray:
-    """Locate punch-hole blobs (near-square contours above a minimum area)
-    and edge artifacts (highly elongated contours), then mask them out --
-    following the algorithm described in Maheswari et al. (2024), with two
-    important fixes versus a literal reading of the paper's steps:
+def detect_and_clear_holes(binary_img: np.ndarray, gray_img: np.ndarray,
+                           min_radius: int = 6, max_radius: int = 60,
+                           min_circularity: float = 0.55, border_margin: int = 6,
+                           dilate_pad: int = 16):
+    """Remove punch holes, framed correctly as: *a compact, roughly-circular
+    region enclosed by the leaf that is not itself leaf or ink.*
 
-    1. We mask the ACTUAL CONTOUR SHAPE (cv2.drawContours, filled), not its
-       bounding rectangle. A thin frame-shaped contour (e.g. the border of
-       a hard crop edge picked up by Sauvola) has a bounding rectangle that
-       spans nearly the whole image even though the contour itself is a
-       thin loop -- masking the bounding rect would wipe out real content
-       around it.
-    2. We skip any contour whose bounding box covers more than
-       `max_area_fraction` of the image. That's almost certainly the crop
-       boundary itself, not a genuine punch hole or a small edge artifact
-       worth removing.
+    Why not the old "find a dark near-square blob" approach: a binding hole
+    photographed over a white sheet reads BRIGHT, so in the binary it is
+    background, not a blob. The old detector could therefore only catch the
+    dark text/Sauvola ring encircling a hole -- fragile, and it missed holes
+    whose ring wasn't a clean closed contour.
 
-    IMPORTANT LIMITATION: the "aspect ratio close to 1" heuristic used to
-    identify holes cannot, by itself, distinguish a punch hole from any
-    sufficiently round/blob-shaped glyph (Tamil has several vowel signs
-    and characters with circular or loop-like forms). The `min_area`
-    threshold is doing real work here -- it assumes punch holes are
-    reliably larger than a single character stroke, which holds at
-    typical manuscript photo resolutions but WILL need re-tuning per
-    manuscript/scan resolution. Always visually sanity-check the output
-    on a few pages before trusting this on a full batch.
+    Method:
+      1. Build the solid leaf silhouette (largest grayscale contour, filled).
+      2. Hole candidates = silhouette AND NOT leaf_mask. This isolates
+         interior gaps (bright show-through, or dark shadow -- either way
+         "not leaf") while excluding the white sheet border (outside the
+         silhouette) and dark ink (part of the leaf foreground).
+      3. Keep candidates that are round enough and within a radius band.
+      4. Clear a disc of radius r + dilate_pad in the binary. The Sauvola
+         edge-ring around a bright hole is ~half the Sauvola window wide and
+         does NOT scale with hole size, so pass dilate_pad ~= window//2 + a
+         few px to guarantee the ring is erased too.
+
+    Radius/area thresholds assume holes are larger than a single glyph stroke
+    and smaller than max_radius; RE-TUNE per scan resolution and always
+    visually sanity-check a few pages before trusting on a full batch.
+
+    Returns (cleaned_binary, [(cx, cy, r), ...]).
     """
-    img_area = binary_img.shape[0] * binary_img.shape[1]
-    inv = cv2.bitwise_not(binary_img)
-    # RETR_EXTERNAL (not RETR_LIST) is important here: Sauvola often draws
-    # a thin ring outline around a hole rather than a solid fill, which
-    # would otherwise produce two nested contours (inner+outer boundary)
-    # for the SAME hole -- double-counting it against num_holes and
-    # causing the loop to stop before reaching genuinely distinct holes.
-    contours, _ = cv2.findContours(inv, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    H, W = gray_img.shape
+    _, leaf = cv2.threshold(gray_img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    leaf = cv2.morphologyEx(leaf, cv2.MORPH_CLOSE,
+                            cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15)))
 
-    # Sort by area, descending
-    contours = sorted(contours, key=cv2.contourArea, reverse=True)
+    cnts, _ = cv2.findContours(leaf, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not cnts:
+        return binary_img.copy(), []
+    silhouette = np.zeros((H, W), np.uint8)
+    cv2.drawContours(silhouette, [max(cnts, key=cv2.contourArea)], -1, 255, -1)
 
-    holes_contours = []
-    edge_contours = []
-    holes_found = 0
+    enclosed = cv2.bitwise_and(silhouette, cv2.bitwise_not(leaf))
+    inner = cv2.erode(silhouette, cv2.getStructuringElement(
+        cv2.MORPH_ELLIPSE, (border_margin * 2 + 1, border_margin * 2 + 1)))
+    enclosed = cv2.bitwise_and(enclosed, inner)
+    enclosed = cv2.morphologyEx(enclosed, cv2.MORPH_OPEN,
+                                cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
 
-    for c in contours:
-        area = cv2.contourArea(c)
-        if area < min_area:
+    n, lab, stats, cent = cv2.connectedComponentsWithStats(enclosed, 8)
+    holes, hole_mask = [], np.zeros((H, W), np.uint8)
+    for i in range(1, n):
+        x, y, w, h, area = stats[i]
+        if area < np.pi * (min_radius ** 2):
             continue
-        x, y, w, h = cv2.boundingRect(c)
-        if (w * h) > max_area_fraction * img_area:
-            continue  # crop boundary artifact, not a real defect -- skip
-        aspect = w / float(h) if h > 0 else 0
+        r = 0.5 * (w + h) / 2.0
+        if not (min_radius <= r <= max_radius):
+            continue
+        circularity = area / (np.pi * r * r)          # ~1.0 for a filled disc
+        if circularity < min_circularity:
+            continue
+        cx, cy = cent[i]
+        cv2.circle(hole_mask, (int(cx), int(cy)), int(r + dilate_pad), 255, -1)
+        holes.append((int(cx), int(cy), int(r)))
 
-        if abs(aspect - 1.0) <= aspect_tolerance:
-            holes_contours.append(c)
-            holes_found += 1
-        else:
-            edge_contours.append(c)
-
-        if holes_found >= num_holes:
-            break
-
-    mask = np.zeros_like(binary_img)
-    cv2.drawContours(mask, holes_contours + edge_contours, -1, 255, thickness=-1)
-
-    # Where mask is set, flip the binary image to white (background)
-    result = binary_img.copy()
-    result[mask == 255] = 255
-
-    holes_bboxes = [cv2.boundingRect(c) for c in holes_contours]
-    return result, holes_bboxes
+    cleaned = binary_img.copy()
+    cleaned[hole_mask == 255] = 255
+    return cleaned, holes
 
 
 # ---------------------------------------------------------------------------
@@ -235,16 +220,17 @@ def process_image(path: str, sauvola_window: int = 25, sauvola_k: float = 0.2,
     raw_gray = to_grayscale_luminosity(bgr)
     denoised = denoise(bgr)
 
-    # Crop FIRST, using the grayscale leaf-vs-sheet contrast, then binarize
-    # the already-cropped region. This order matters -- see find_leaf_bbox().
+    # Crop FIRST using grayscale leaf-vs-sheet contrast, then binarize.
     bbox = find_leaf_bbox(denoised, padding=crop_padding)
     denoised_cropped = crop_to_content(denoised, bbox)
 
     binary_raw = binarize_sauvola(denoised_cropped, window_size=sauvola_window, k=sauvola_k)
-    # Margin should be roughly half the Sauvola window size, since that's
-    # how far the boundary-clipping artifact tends to bleed inward.
     binary = clear_border_artifacts(binary_raw, margin=max(4, sauvola_window // 2 + 3))
-    cleaned, holes = remove_punch_holes(binary)
+
+    # Hole removal needs the GRAYSCALE crop (holes are bright there) plus a
+    # clear-pad wide enough to swallow the Sauvola ring (~window/2).
+    cleaned, holes = detect_and_clear_holes(
+        binary, denoised_cropped, dilate_pad=sauvola_window // 2 + 4)
 
     psnr = compute_psnr(raw_gray, denoised)
 
@@ -262,26 +248,19 @@ def process_image(path: str, sauvola_window: int = 25, sauvola_k: float = 0.2,
 
 
 # ---------------------------------------------------------------------------
-# Demo on a synthetic test image (runs if no real manuscript is available)
+# Demo on a synthetic test image
 # ---------------------------------------------------------------------------
 
 def _make_synthetic_leaf(path: str = "synthetic_leaf.png"):
-    """Generate a fake palm-leaf-like image: a tan leaf strip photographed
-    on a white sheet (matching real acquisition setup), with fibrous
-    horizontal texture, wavy dark 'text' rows, two punch holes, and
-    salt-and-pepper noise -- just enough to exercise every stage of the
-    pipeline before you have real scans."""
+    """Fake palm-leaf: tan strip on a white sheet, fibrous texture, wavy dark
+    'text' rows, two bright punch holes, and salt-and-pepper noise."""
     h, w = 400, 1000
     rng = np.random.default_rng(42)
-
-    # White sheet background (as in real acquisition: leaf placed on white paper)
     img = np.full((h, w, 3), 245, dtype=np.uint8)
 
-    # Leaf region: a horizontal strip, tan/brown, inset from the edges
     leaf_x0, leaf_y0, leaf_x1, leaf_y1 = 60, 100, w - 60, h - 100
-    img[leaf_y0:leaf_y1, leaf_x0:leaf_x1] = (60, 130, 175)  # BGR: brownish tan
+    img[leaf_y0:leaf_y1, leaf_x0:leaf_x1] = (60, 130, 175)
 
-    # Fibrous horizontal streaks, confined to the leaf region
     for _ in range(150):
         y = rng.integers(leaf_y0, leaf_y1)
         x0 = rng.integers(leaf_x0, leaf_x1 - 50)
@@ -290,7 +269,6 @@ def _make_synthetic_leaf(path: str = "synthetic_leaf.png"):
         color = tuple(int(np.clip(c + shade, 0, 255)) for c in (60, 130, 175))
         cv2.line(img, (x0, y), (min(x0 + length, leaf_x1), y), color, 1)
 
-    # Simulated text rows: wavy dark strokes, confined to the leaf region
     for row in range(5):
         base_y = leaf_y0 + 30 + row * 35
         x = leaf_x0 + 30
@@ -299,11 +277,9 @@ def _make_synthetic_leaf(path: str = "synthetic_leaf.png"):
             cv2.circle(img, (x, base_y + wobble), rng.integers(2, 5), (20, 20, 20), -1)
             x += rng.integers(6, 14)
 
-    # Two punch holes (near-circular), inside the leaf
     cv2.circle(img, (leaf_x0 + 80, (leaf_y0 + leaf_y1) // 2), 12, (235, 235, 235), -1)
     cv2.circle(img, (leaf_x1 - 80, (leaf_y0 + leaf_y1) // 2), 12, (235, 235, 235), -1)
 
-    # Salt-and-pepper noise across the whole image
     noise_mask = rng.random((h, w)) < 0.01
     img[noise_mask] = rng.integers(0, 255, size=(noise_mask.sum(), 3))
 
@@ -315,12 +291,12 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     print("No real manuscript supplied -- generating a synthetic test leaf...")
-    test_path = _make_synthetic_leaf("/home/claude/synthetic_leaf.png")
+    test_path = _make_synthetic_leaf("synthetic_leaf.png")
 
     result = process_image(test_path)
 
     print(f"PSNR (raw vs denoised): {result['psnr']:.2f} dB")
-    print(f"Punch holes detected: {len(result['holes_found'])}")
+    print(f"Punch holes detected: {len(result['holes_found'])} -> {result['holes_found']}")
     print(f"Crop bounding box: {result['bbox']}")
 
     fig, axes = plt.subplots(2, 3, figsize=(16, 7))
@@ -338,6 +314,6 @@ if __name__ == "__main__":
         ax.axis("off")
 
     plt.tight_layout()
-    out_path = "/home/claude/pipeline_demo.png"
+    out_path = "pipeline_demo.png"
     plt.savefig(out_path, dpi=130)
     print(f"Saved visualization to {out_path}")
