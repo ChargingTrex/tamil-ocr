@@ -1,0 +1,3262 @@
+[
+  {
+    "file": "125.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3339,
+      555
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          180,
+          344
+        ],
+        "text": "சழழநூஊஊழவுழழழஊதய்நூஊழழஊழய்ழசழழநூஊ",
+        "n_chars": 27,
+        "characters": [
+          {
+            "bbox": [
+              94,
+              266,
+              35,
+              55
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.155
+          },
+          {
+            "bbox": [
+              128,
+              230,
+              110,
+              92
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.182
+          },
+          {
+            "bbox": [
+              220,
+              231,
+              75,
+              71
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.214
+          },
+          {
+            "bbox": [
+              461,
+              201,
+              290,
+              130
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.154
+          },
+          {
+            "bbox": [
+              743,
+              204,
+              113,
+              113
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.139
+          },
+          {
+            "bbox": [
+              849,
+              201,
+              79,
+              114
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.144
+          },
+          {
+            "bbox": [
+              922,
+              200,
+              134,
+              118
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.105
+          },
+          {
+            "bbox": [
+              1053,
+              205,
+              51,
+              39
+            ],
+            "class": "vu",
+            "tamil": "வு",
+            "confidence": 0.102
+          },
+          {
+            "bbox": [
+              1099,
+              197,
+              217,
+              147
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.271
+          },
+          {
+            "bbox": [
+              1308,
+              190,
+              249,
+              144
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.29
+          },
+          {
+            "bbox": [
+              1555,
+              188,
+              142,
+              118
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.132
+          },
+          {
+            "bbox": [
+              1682,
+              192,
+              68,
+              114
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.131
+          },
+          {
+            "bbox": [
+              1746,
+              188,
+              64,
+              121
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.116
+          },
+          {
+            "bbox": [
+              1812,
+              180,
+              229,
+              126
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.205
+          },
+          {
+            "bbox": [
+              2031,
+              180,
+              329,
+              122
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.154
+          },
+          {
+            "bbox": [
+              2351,
+              187,
+              65,
+              110
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.114
+          },
+          {
+            "bbox": [
+              2404,
+              180,
+              120,
+              118
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.134
+          },
+          {
+            "bbox": [
+              2521,
+              187,
+              53,
+              60
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.206
+          },
+          {
+            "bbox": [
+              2585,
+              186,
+              34,
+              47
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.149
+          },
+          {
+            "bbox": [
+              2616,
+              190,
+              121,
+              107
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.3
+          },
+          {
+            "bbox": [
+              2732,
+              193,
+              182,
+              104
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.144
+          },
+          {
+            "bbox": [
+              2896,
+              188,
+              151,
+              108
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.249
+          },
+          {
+            "bbox": [
+              3046,
+              249,
+              36,
+              46
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.162
+          },
+          {
+            "bbox": [
+              3076,
+              194,
+              70,
+              74
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.212
+          },
+          {
+            "bbox": [
+              3147,
+              195,
+              39,
+              86
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.135
+          },
+          {
+            "bbox": [
+              3191,
+              252,
+              50,
+              15
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.182
+          },
+          {
+            "bbox": [
+              3238,
+              192,
+              77,
+              94
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.129
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "126.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3582,
+      578
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          158,
+          409
+        ],
+        "text": "சநூழழஊழழய்ழழய்நூநூழ",
+        "n_chars": 14,
+        "characters": [
+          {
+            "bbox": [
+              26,
+              339,
+              32,
+              17
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.158
+          },
+          {
+            "bbox": [
+              50,
+              280,
+              34,
+              9
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.137
+          },
+          {
+            "bbox": [
+              117,
+              223,
+              167,
+              177
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.252
+          },
+          {
+            "bbox": [
+              281,
+              216,
+              57,
+              193
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.104
+          },
+          {
+            "bbox": [
+              344,
+              324,
+              38,
+              82
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.092
+          },
+          {
+            "bbox": [
+              377,
+              207,
+              180,
+              202
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.319
+          },
+          {
+            "bbox": [
+              539,
+              199,
+              133,
+              206
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.206
+          },
+          {
+            "bbox": [
+              651,
+              190,
+              429,
+              217
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.215
+          },
+          {
+            "bbox": [
+              1047,
+              184,
+              189,
+              211
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.232
+          },
+          {
+            "bbox": [
+              1191,
+              179,
+              267,
+              212
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.4
+          },
+          {
+            "bbox": [
+              1424,
+              164,
+              594,
+              225
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.188
+          },
+          {
+            "bbox": [
+              1982,
+              158,
+              547,
+              221
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.147
+          },
+          {
+            "bbox": [
+              2491,
+              158,
+              762,
+              212
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.231
+          },
+          {
+            "bbox": [
+              3225,
+              158,
+              204,
+              203
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.218
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "127.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3371,
+      550
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          106,
+          339
+        ],
+        "text": "நூழழநூழழநூ",
+        "n_chars": 7,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              124,
+              694,
+              215
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.172
+          },
+          {
+            "bbox": [
+              687,
+              123,
+              173,
+              210
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.423
+          },
+          {
+            "bbox": [
+              836,
+              120,
+              319,
+              219
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.393
+          },
+          {
+            "bbox": [
+              1144,
+              108,
+              783,
+              224
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.144
+          },
+          {
+            "bbox": [
+              1900,
+              106,
+              385,
+              223
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.344
+          },
+          {
+            "bbox": [
+              2262,
+              106,
+              328,
+              213
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.359
+          },
+          {
+            "bbox": [
+              2562,
+              106,
+              790,
+              210
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.236
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "128.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3576,
+      537
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          121,
+          346
+        ],
+        "text": "நூழழநூய்ச",
+        "n_chars": 6,
+        "characters": [
+          {
+            "bbox": [
+              193,
+              121,
+              782,
+              221
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.267
+          },
+          {
+            "bbox": [
+              940,
+              121,
+              465,
+              220
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.197
+          },
+          {
+            "bbox": [
+              1369,
+              121,
+              209,
+              218
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.338
+          },
+          {
+            "bbox": [
+              1566,
+              121,
+              1481,
+              224
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.177
+          },
+          {
+            "bbox": [
+              3012,
+              126,
+              504,
+              220
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.146
+          },
+          {
+            "bbox": [
+              3510,
+              314,
+              47,
+              32
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.152
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "130.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3445,
+      600
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          98,
+          467
+        ],
+        "text": "சழநூசழதழநூசசசஊ",
+        "n_chars": 12,
+        "characters": [
+          {
+            "bbox": [
+              188,
+              107,
+              112,
+              330
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.107
+          },
+          {
+            "bbox": [
+              289,
+              113,
+              191,
+              337
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.184
+          },
+          {
+            "bbox": [
+              455,
+              100,
+              1071,
+              367
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.201
+          },
+          {
+            "bbox": [
+              1517,
+              113,
+              44,
+              346
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.153
+          },
+          {
+            "bbox": [
+              1554,
+              100,
+              161,
+              355
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.111
+          },
+          {
+            "bbox": [
+              1703,
+              101,
+              129,
+              366
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.136
+          },
+          {
+            "bbox": [
+              1815,
+              98,
+              364,
+              369
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.236
+          },
+          {
+            "bbox": [
+              2149,
+              98,
+              1047,
+              369
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.151
+          },
+          {
+            "bbox": [
+              3168,
+              98,
+              107,
+              354
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.197
+          },
+          {
+            "bbox": [
+              3266,
+              98,
+              43,
+              340
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.144
+          },
+          {
+            "bbox": [
+              3301,
+              98,
+              90,
+              352
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.165
+          },
+          {
+            "bbox": [
+              3405,
+              133,
+              30,
+              34
+            ],
+            "class": "oo",
+            "tamil": "ஊ",
+            "confidence": 0.144
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "131.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3262,
+      508
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          10,
+          373
+        ],
+        "text": "ழழநூழநூ",
+        "n_chars": 5,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              10,
+              315,
+              352
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.313
+          },
+          {
+            "bbox": [
+              295,
+              10,
+              411,
+              349
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.451
+          },
+          {
+            "bbox": [
+              693,
+              10,
+              1109,
+              363
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.179
+          },
+          {
+            "bbox": [
+              1786,
+              12,
+              343,
+              361
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.24
+          },
+          {
+            "bbox": [
+              2105,
+              12,
+              1134,
+              361
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.161
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "132.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3183,
+      487
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          101,
+          474
+        ],
+        "text": "ழசழழழழழசநூ",
+        "n_chars": 9,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              107,
+              166,
+              346
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.132
+          },
+          {
+            "bbox": [
+              155,
+              108,
+              63,
+              344
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.147
+          },
+          {
+            "bbox": [
+              210,
+              109,
+              229,
+              359
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.247
+          },
+          {
+            "bbox": [
+              409,
+              101,
+              284,
+              366
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.277
+          },
+          {
+            "bbox": [
+              672,
+              101,
+              270,
+              368
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.257
+          },
+          {
+            "bbox": [
+              904,
+              105,
+              802,
+              369
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.158
+          },
+          {
+            "bbox": [
+              1677,
+              101,
+              614,
+              371
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.455
+          },
+          {
+            "bbox": [
+              2272,
+              104,
+              102,
+              363
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.163
+          },
+          {
+            "bbox": [
+              2361,
+              101,
+              802,
+              373
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.151
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "137.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3343,
+      474
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          84,
+          464
+        ],
+        "text": "ழழழநூழநூ",
+        "n_chars": 6,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              109,
+              136,
+              343
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.118
+          },
+          {
+            "bbox": [
+              113,
+              98,
+              381,
+              353
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.21
+          },
+          {
+            "bbox": [
+              477,
+              97,
+              329,
+              352
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.236
+          },
+          {
+            "bbox": [
+              789,
+              84,
+              1190,
+              380
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.187
+          },
+          {
+            "bbox": [
+              1916,
+              84,
+              506,
+              380
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.376
+          },
+          {
+            "bbox": [
+              2382,
+              84,
+              956,
+              380
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.176
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "138.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3222,
+      482
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          11,
+          399
+        ],
+        "text": "ழய்ழழழழய்ழ",
+        "n_chars": 8,
+        "characters": [
+          {
+            "bbox": [
+              10,
+              11,
+              274,
+              335
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.192
+          },
+          {
+            "bbox": [
+              257,
+              12,
+              555,
+              352
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.343
+          },
+          {
+            "bbox": [
+              804,
+              34,
+              559,
+              358
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.431
+          },
+          {
+            "bbox": [
+              1344,
+              41,
+              798,
+              358
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.202
+          },
+          {
+            "bbox": [
+              2128,
+              47,
+              217,
+              345
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.173
+          },
+          {
+            "bbox": [
+              2335,
+              52,
+              133,
+              347
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.207
+          },
+          {
+            "bbox": [
+              2449,
+              48,
+              436,
+              351
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.216
+          },
+          {
+            "bbox": [
+              2854,
+              51,
+              363,
+              328
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.197
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "139.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3349,
+      489
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          96,
+          478
+        ],
+        "text": "ழதசநூழத",
+        "n_chars": 6,
+        "characters": [
+          {
+            "bbox": [
+              17,
+              107,
+              684,
+              355
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.311
+          },
+          {
+            "bbox": [
+              692,
+              115,
+              141,
+              344
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.127
+          },
+          {
+            "bbox": [
+              819,
+              112,
+              54,
+              347
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.149
+          },
+          {
+            "bbox": [
+              865,
+              96,
+              2139,
+              382
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.164
+          },
+          {
+            "bbox": [
+              2990,
+              104,
+              209,
+              373
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.183
+          },
+          {
+            "bbox": [
+              3179,
+              107,
+              122,
+              365
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.14
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "141.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3772,
+      557
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          57,
+          430
+        ],
+        "text": "ழழழழழழழ",
+        "n_chars": 7,
+        "characters": [
+          {
+            "bbox": [
+              236,
+              57,
+              758,
+              367
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.313
+          },
+          {
+            "bbox": [
+              968,
+              57,
+              680,
+              366
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.371
+          },
+          {
+            "bbox": [
+              1606,
+              60,
+              236,
+              357
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.255
+          },
+          {
+            "bbox": [
+              1823,
+              57,
+              166,
+              368
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.154
+          },
+          {
+            "bbox": [
+              1968,
+              57,
+              856,
+              373
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.201
+          },
+          {
+            "bbox": [
+              2791,
+              57,
+              265,
+              373
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.293
+          },
+          {
+            "bbox": [
+              3026,
+              69,
+              496,
+              361
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.361
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "147.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3295,
+      500
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          32,
+          413
+        ],
+        "text": "நூழழழழநூ",
+        "n_chars": 6,
+        "characters": [
+          {
+            "bbox": [
+              9,
+              32,
+              982,
+              362
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.155
+          },
+          {
+            "bbox": [
+              964,
+              32,
+              163,
+              355
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.141
+          },
+          {
+            "bbox": [
+              1104,
+              38,
+              176,
+              363
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.126
+          },
+          {
+            "bbox": [
+              1263,
+              35,
+              435,
+              374
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.39
+          },
+          {
+            "bbox": [
+              1679,
+              43,
+              288,
+              360
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.2
+          },
+          {
+            "bbox": [
+              1938,
+              39,
+              1347,
+              374
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.297
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "148.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3355,
+      506
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          8,
+          408
+        ],
+        "text": "நூழழசழ",
+        "n_chars": 5,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              8,
+              2041,
+              376
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.159
+          },
+          {
+            "bbox": [
+              1995,
+              17,
+              557,
+              382
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.372
+          },
+          {
+            "bbox": [
+              2504,
+              37,
+              437,
+              371
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.467
+          },
+          {
+            "bbox": [
+              2904,
+              67,
+              174,
+              341
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.155
+          },
+          {
+            "bbox": [
+              3053,
+              74,
+              290,
+              334
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.166
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "149.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3354,
+      547
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          65,
+          473
+        ],
+        "text": "ழழழழசழழல",
+        "n_chars": 8,
+        "characters": [
+          {
+            "bbox": [
+              14,
+              96,
+              439,
+              342
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.321
+          },
+          {
+            "bbox": [
+              430,
+              77,
+              485,
+              365
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.39
+          },
+          {
+            "bbox": [
+              903,
+              65,
+              740,
+              380
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.258
+          },
+          {
+            "bbox": [
+              1611,
+              65,
+              408,
+              392
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.323
+          },
+          {
+            "bbox": [
+              1992,
+              70,
+              117,
+              388
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.154
+          },
+          {
+            "bbox": [
+              2077,
+              74,
+              722,
+              399
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.312
+          },
+          {
+            "bbox": [
+              2782,
+              100,
+              512,
+              373
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.322
+          },
+          {
+            "bbox": [
+              3294,
+              373,
+              54,
+              27
+            ],
+            "class": "la",
+            "tamil": "ல",
+            "confidence": 0.091
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "150.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3438,
+      474
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          11,
+          401
+        ],
+        "text": "சசழழழநூழழ",
+        "n_chars": 8,
+        "characters": [
+          {
+            "bbox": [
+              117,
+              17,
+              41,
+              334
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.17
+          },
+          {
+            "bbox": [
+              152,
+              11,
+              46,
+              338
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.139
+          },
+          {
+            "bbox": [
+              187,
+              11,
+              287,
+              363
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.336
+          },
+          {
+            "bbox": [
+              449,
+              11,
+              456,
+              365
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.416
+          },
+          {
+            "bbox": [
+              882,
+              11,
+              830,
+              388
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.161
+          },
+          {
+            "bbox": [
+              1694,
+              16,
+              1073,
+              385
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.168
+          },
+          {
+            "bbox": [
+              2743,
+              19,
+              292,
+              372
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.294
+          },
+          {
+            "bbox": [
+              2993,
+              21,
+              439,
+              369
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.242
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "151.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3394,
+      581
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          90,
+          473
+        ],
+        "text": "ழழழழழழ",
+        "n_chars": 6,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              105,
+              252,
+              368
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.312
+          },
+          {
+            "bbox": [
+              239,
+              104,
+              1659,
+              369
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.172
+          },
+          {
+            "bbox": [
+              1841,
+              90,
+              463,
+              383
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.456
+          },
+          {
+            "bbox": [
+              2241,
+              90,
+              745,
+              380
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.434
+          },
+          {
+            "bbox": [
+              2967,
+              90,
+              227,
+              373
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.183
+          },
+          {
+            "bbox": [
+              3169,
+              98,
+              220,
+              364
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.136
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "162.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3415,
+      517
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          46,
+          436
+        ],
+        "text": "ழழசழநூழய்தசமூ",
+        "n_chars": 10,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              46,
+              318,
+              339
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.18
+          },
+          {
+            "bbox": [
+              308,
+              46,
+              370,
+              353
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.203
+          },
+          {
+            "bbox": [
+              658,
+              55,
+              70,
+              360
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.104
+          },
+          {
+            "bbox": [
+              716,
+              52,
+              238,
+              373
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.248
+          },
+          {
+            "bbox": [
+              941,
+              49,
+              1266,
+              387
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.222
+          },
+          {
+            "bbox": [
+              2187,
+              46,
+              504,
+              388
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.387
+          },
+          {
+            "bbox": [
+              2648,
+              53,
+              514,
+              368
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.259
+          },
+          {
+            "bbox": [
+              3134,
+              52,
+              124,
+              335
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.121
+          },
+          {
+            "bbox": [
+              3242,
+              56,
+              77,
+              337
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.127
+          },
+          {
+            "bbox": [
+              3310,
+              255,
+              59,
+              127
+            ],
+            "class": "moo",
+            "tamil": "மூ",
+            "confidence": 0.113
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "163.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3675,
+      410
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          22,
+          398
+        ],
+        "text": "சசநூநூழசசரரழ",
+        "n_chars": 10,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              22,
+              47,
+              363
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.174
+          },
+          {
+            "bbox": [
+              51,
+              25,
+              196,
+              357
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.175
+          },
+          {
+            "bbox": [
+              230,
+              24,
+              1288,
+              370
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.25
+          },
+          {
+            "bbox": [
+              1493,
+              22,
+              1023,
+              376
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.187
+          },
+          {
+            "bbox": [
+              2500,
+              29,
+              606,
+              369
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.276
+          },
+          {
+            "bbox": [
+              3090,
+              45,
+              96,
+              351
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.113
+          },
+          {
+            "bbox": [
+              3158,
+              33,
+              192,
+              353
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.148
+          },
+          {
+            "bbox": [
+              3347,
+              368,
+              16,
+              13
+            ],
+            "class": "ra",
+            "tamil": "ர",
+            "confidence": 0.174
+          },
+          {
+            "bbox": [
+              3383,
+              363,
+              26,
+              19
+            ],
+            "class": "ra",
+            "tamil": "ர",
+            "confidence": 0.133
+          },
+          {
+            "bbox": [
+              3653,
+              112,
+              17,
+              13
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.097
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "164.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3537,
+      458
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          34,
+          431
+        ],
+        "text": "சழசழழழழழழசழழழ",
+        "n_chars": 13,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              64,
+              123,
+              352
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.135
+          },
+          {
+            "bbox": [
+              122,
+              62,
+              290,
+              366
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.235
+          },
+          {
+            "bbox": [
+              399,
+              56,
+              72,
+              369
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.104
+          },
+          {
+            "bbox": [
+              459,
+              54,
+              299,
+              373
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.227
+          },
+          {
+            "bbox": [
+              738,
+              47,
+              212,
+              384
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.142
+          },
+          {
+            "bbox": [
+              931,
+              49,
+              218,
+              379
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.228
+          },
+          {
+            "bbox": [
+              1133,
+              34,
+              573,
+              397
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.412
+          },
+          {
+            "bbox": [
+              1689,
+              34,
+              303,
+              390
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.284
+          },
+          {
+            "bbox": [
+              1959,
+              34,
+              595,
+              397
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.341
+          },
+          {
+            "bbox": [
+              2542,
+              55,
+              96,
+              376
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.123
+          },
+          {
+            "bbox": [
+              2614,
+              47,
+              220,
+              382
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.172
+          },
+          {
+            "bbox": [
+              2816,
+              62,
+              252,
+              359
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.16
+          },
+          {
+            "bbox": [
+              3044,
+              63,
+              353,
+              366
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.189
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "165.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3425,
+      416
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          6,
+          404
+        ],
+        "text": "சழழழநூழழழழழச",
+        "n_chars": 11,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              77,
+              45,
+              325
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.164
+          },
+          {
+            "bbox": [
+              48,
+              62,
+              133,
+              341
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.134
+          },
+          {
+            "bbox": [
+              154,
+              46,
+              244,
+              358
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.231
+          },
+          {
+            "bbox": [
+              393,
+              33,
+              473,
+              371
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.288
+          },
+          {
+            "bbox": [
+              846,
+              6,
+              909,
+              398
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.157
+          },
+          {
+            "bbox": [
+              1742,
+              6,
+              556,
+              390
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.467
+          },
+          {
+            "bbox": [
+              2284,
+              6,
+              255,
+              382
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.16
+          },
+          {
+            "bbox": [
+              2515,
+              13,
+              254,
+              378
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.209
+          },
+          {
+            "bbox": [
+              2753,
+              12,
+              257,
+              367
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.198
+          },
+          {
+            "bbox": [
+              2990,
+              30,
+              406,
+              354
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.367
+          },
+          {
+            "bbox": [
+              3390,
+              276,
+              28,
+              99
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.09
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "166.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3391,
+      478
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          75,
+          462
+        ],
+        "text": "சசதசசநூழழழசதத",
+        "n_chars": 12,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              120,
+              48,
+              336
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.126
+          },
+          {
+            "bbox": [
+              49,
+              115,
+              69,
+              337
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.187
+          },
+          {
+            "bbox": [
+              110,
+              111,
+              142,
+              351
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.165
+          },
+          {
+            "bbox": [
+              241,
+              97,
+              179,
+              353
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.111
+          },
+          {
+            "bbox": [
+              412,
+              97,
+              126,
+              348
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.143
+          },
+          {
+            "bbox": [
+              528,
+              75,
+              1070,
+              386
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.177
+          },
+          {
+            "bbox": [
+              1588,
+              75,
+              702,
+              387
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.45
+          },
+          {
+            "bbox": [
+              2275,
+              80,
+              277,
+              371
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.225
+          },
+          {
+            "bbox": [
+              2534,
+              82,
+              619,
+              380
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.354
+          },
+          {
+            "bbox": [
+              3141,
+              115,
+              46,
+              347
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.118
+          },
+          {
+            "bbox": [
+              3175,
+              108,
+              75,
+              346
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.118
+          },
+          {
+            "bbox": [
+              3234,
+              108,
+              120,
+              350
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.193
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "172.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3384,
+      491
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          21,
+          406
+        ],
+        "text": "சசசய்தழழய்ழ",
+        "n_chars": 9,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              58,
+              45,
+              296
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.123
+          },
+          {
+            "bbox": [
+              47,
+              67,
+              64,
+              321
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.176
+          },
+          {
+            "bbox": [
+              104,
+              53,
+              88,
+              336
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.153
+          },
+          {
+            "bbox": [
+              171,
+              21,
+              889,
+              372
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.192
+          },
+          {
+            "bbox": [
+              1042,
+              21,
+              105,
+              355
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.13
+          },
+          {
+            "bbox": [
+              1121,
+              21,
+              326,
+              365
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.298
+          },
+          {
+            "bbox": [
+              1410,
+              21,
+              751,
+              377
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.308
+          },
+          {
+            "bbox": [
+              2129,
+              27,
+              897,
+              379
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.148
+          },
+          {
+            "bbox": [
+              2970,
+              48,
+              409,
+              358
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.276
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "173.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3421,
+      422
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          16,
+          406
+        ],
+        "text": "சழழசழசழழய்த",
+        "n_chars": 10,
+        "characters": [
+          {
+            "bbox": [
+              8,
+              16,
+              59,
+              355
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.13
+          },
+          {
+            "bbox": [
+              65,
+              16,
+              497,
+              364
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.362
+          },
+          {
+            "bbox": [
+              541,
+              16,
+              317,
+              362
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.144
+          },
+          {
+            "bbox": [
+              843,
+              18,
+              149,
+              361
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.175
+          },
+          {
+            "bbox": [
+              984,
+              16,
+              357,
+              372
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.132
+          },
+          {
+            "bbox": [
+              1331,
+              22,
+              137,
+              372
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.138
+          },
+          {
+            "bbox": [
+              1459,
+              16,
+              831,
+              390
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.172
+          },
+          {
+            "bbox": [
+              2245,
+              24,
+              336,
+              382
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.205
+          },
+          {
+            "bbox": [
+              2556,
+              27,
+              700,
+              379
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.304
+          },
+          {
+            "bbox": [
+              3245,
+              41,
+              161,
+              356
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.155
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "174.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3626,
+      559
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          80,
+          490
+        ],
+        "text": "ழசழநூழழத",
+        "n_chars": 7,
+        "characters": [
+          {
+            "bbox": [
+              5,
+              80,
+              274,
+              371
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.207
+          },
+          {
+            "bbox": [
+              269,
+              82,
+              79,
+              366
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.109
+          },
+          {
+            "bbox": [
+              336,
+              80,
+              319,
+              372
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.169
+          },
+          {
+            "bbox": [
+              622,
+              80,
+              2026,
+              410
+            ],
+            "class": "nuu",
+            "tamil": "நூ",
+            "confidence": 0.167
+          },
+          {
+            "bbox": [
+              2627,
+              118,
+              256,
+              372
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.293
+          },
+          {
+            "bbox": [
+              2866,
+              122,
+              443,
+              368
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.415
+          },
+          {
+            "bbox": [
+              3280,
+              139,
+              113,
+              342
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.193
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "175.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3637,
+      401
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          9,
+          383
+        ],
+        "text": "ழழழய்ழழழழ",
+        "n_chars": 8,
+        "characters": [
+          {
+            "bbox": [
+              224,
+              9,
+              383,
+              342
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.282
+          },
+          {
+            "bbox": [
+              592,
+              12,
+              244,
+              341
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.183
+          },
+          {
+            "bbox": [
+              816,
+              9,
+              602,
+              369
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.498
+          },
+          {
+            "bbox": [
+              1389,
+              11,
+              772,
+              370
+            ],
+            "class": "y",
+            "tamil": "ய்",
+            "confidence": 0.164
+          },
+          {
+            "bbox": [
+              2146,
+              26,
+              306,
+              353
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.235
+          },
+          {
+            "bbox": [
+              2429,
+              31,
+              264,
+              352
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.209
+          },
+          {
+            "bbox": [
+              2680,
+              32,
+              326,
+              348
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.179
+          },
+          {
+            "bbox": [
+              2988,
+              34,
+              618,
+              349
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.342
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "176.jpg",
+    "pre_binarized": true,
+    "psnr": "inf",
+    "holes_removed": 0,
+    "image_size": [
+      3355,
+      418
+    ],
+    "lines": [
+      {
+        "line_idx": 0,
+        "y_range": [
+          9,
+          402
+        ],
+        "text": "சழழழசதழழழழழழ",
+        "n_chars": 12,
+        "characters": [
+          {
+            "bbox": [
+              6,
+              9,
+              120,
+              318
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.161
+          },
+          {
+            "bbox": [
+              119,
+              9,
+              812,
+              365
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.156
+          },
+          {
+            "bbox": [
+              923,
+              18,
+              148,
+              366
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.136
+          },
+          {
+            "bbox": [
+              1044,
+              17,
+              566,
+              379
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.496
+          },
+          {
+            "bbox": [
+              1603,
+              28,
+              51,
+              354
+            ],
+            "class": "cha",
+            "tamil": "ச",
+            "confidence": 0.103
+          },
+          {
+            "bbox": [
+              1647,
+              24,
+              90,
+              362
+            ],
+            "class": "tha",
+            "tamil": "த",
+            "confidence": 0.214
+          },
+          {
+            "bbox": [
+              1730,
+              28,
+              307,
+              368
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.247
+          },
+          {
+            "bbox": [
+              2019,
+              32,
+              260,
+              367
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.264
+          },
+          {
+            "bbox": [
+              2250,
+              34,
+              294,
+              366
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.291
+          },
+          {
+            "bbox": [
+              2522,
+              46,
+              295,
+              356
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.283
+          },
+          {
+            "bbox": [
+              2803,
+              49,
+              310,
+              351
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.349
+          },
+          {
+            "bbox": [
+              3101,
+              47,
+              239,
+              355
+            ],
+            "class": "zha",
+            "tamil": "ழ",
+            "confidence": 0.135
+          }
+        ]
+      }
+    ]
+  }
+]
